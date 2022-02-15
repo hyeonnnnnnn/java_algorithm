@@ -1,4 +1,5 @@
 package sohyeon.feb11;
+
 /*
 재용이는 최신 컴퓨터 10대를 가지고 있다.
  
