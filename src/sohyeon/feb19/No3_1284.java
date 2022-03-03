@@ -65,6 +65,9 @@ public class No3_1284 {
 
 			}
 			sum = sum + str.length() - 1 + 2;		// 총 글자 길이 + 글자 사이 간격 + 여백(2)
+			
+			sc.close();
+			
 			System.out.println(sum);
 		}
 
