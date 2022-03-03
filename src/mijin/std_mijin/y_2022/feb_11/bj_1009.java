@@ -1,4 +1,4 @@
-package mijin.std_mijin.feb_11;
+package mijin.std_mijin.y_2022.feb_11;
 
 import java.util.Scanner;
 
