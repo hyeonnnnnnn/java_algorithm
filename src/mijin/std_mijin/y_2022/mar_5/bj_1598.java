@@ -53,6 +53,7 @@ public class bj_1598 {
 			tmp =((a-1)%4)-((b-1)%4);
 			row =(tmp>0?tmp:tmp*-1);
 		}
+		//Math.abs
 		
 		System.out.printf("¼¼·Î   %d",row);
 		System.out.println();
