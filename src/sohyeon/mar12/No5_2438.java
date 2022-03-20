@@ -14,6 +14,7 @@ import java.util.Scanner;
 --
 예제 입력 1 
 5
+
 예제 출력 1 
 *
 **
@@ -30,13 +31,13 @@ public class No5_2438 {
 		
 		int N = sc.nextInt();
 		
-		for(int i = 1; i <= N; i++) {					// 몇 줄 실행할지
+		for(int i = 1; i <= N; i++) {						// N번 실행
 			
-			for(int j = 1; j <= i; j++) {				// 몇 개 출력할지
+			for(int j = 1; j <= i; j++) {					// 몇 개 출력할지
 				System.out.print("*");	
 			}
 			
-			System.out.println("");						// 다음 행으로
+			System.out.println("");							// 다음 행으로
 			
 		}
 		
