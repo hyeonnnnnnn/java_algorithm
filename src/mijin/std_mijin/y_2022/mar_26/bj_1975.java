@@ -25,9 +25,10 @@ public class bj_1975 {
 		T= s.nextInt();
 		for(int i=0;i<T;i++) {
 			num =s.nextInt();
-			for(int t =2;t<num;t++) {
+			for(int t =2;t<=num;t++) {
 				cv = convert(num,t); //吏꾨쾿蹂��솚
 				sum+= countzero(Integer.toString(cv)); //0媛쒖닔 �꽭湲�
+				
 			}
 			System.out.println(sum);
 			sum=0;
@@ -39,15 +40,16 @@ public class bj_1975 {
 		StringBuilder sb = new StringBuilder();
 		
 		while(true) {
-			tmp = divnum %c;
+			tmp = divnum % c;
 			divnum = divnum/c;
-			if (tmp <c) {
-				sb.insert(0, tmp);
-				
+		
+			sb.insert(0, Integer.toString(tmp));
+			if (divnum <c) {
+				sb.insert(0, Integer.toString(divnum));
 				break;
 			}
-			sb.insert(0, tmp);
 		}
+		//System.out.println(num+"�쓽"+c+"吏꾨쾿��"+sb.toString());
 		return Integer.parseInt(sb.toString());
 		
 	}
