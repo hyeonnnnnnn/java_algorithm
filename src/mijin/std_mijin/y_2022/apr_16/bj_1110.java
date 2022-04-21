@@ -28,7 +28,7 @@ public class bj_1110 {
 		tmp2 = N%10;
 		while(true) {
 			rs  = tmp1+tmp2; //연산
-			num = Integer.parseInt(tmp2+""+(rs%10));
+			num = tmp2*10+(rs%10);
 		
 			if(N == num) //처음수랑 같으면 끝
 				break;
