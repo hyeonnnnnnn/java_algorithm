@@ -48,27 +48,31 @@ public class No2_1652 {
 		int N = Integer.parseInt(br.readLine());								 // 방 크기
 		char[][] room = new char[100][100];										 // 방 구조 저장
 		int rowCount = 0, colCount = 0;
-
+		String[] s = new String[N];
+		
 		for (int i = 0; i < N; i++) {
-			String[] s = br.readLine().split("");								 // 한 줄로 들어온 입력을 하나씩 자름
-
+			s = br.readLine().split("");								 // 한 줄로 들어온 입력을 하나씩 자름
+			
 			for (int j = 0; j < s.length; j++) {
 				room[i][j] = s[j].charAt(0);
 			}
+			room[i][N] = 'X';													// 벽을 X 처리
+			room[N][i] = 'X';
 		}
-
+		
 		for (int i = 0; i < N; i++) {
 
 			for (int j = 0; j < N - 1; j++) {
 				// 행과 열이 2칸 이상 .이고 이후 X일 경우 각 카운트 증가
 				if (room[i][j] == '.' && room[i][j+1] == '.' && room[i][j+2] == 'X') colCount++;		// 행 카운트 증가
 				if (room[j][i] == '.' && room[j][i+1] == '.' && room[j][i+2] == 'X') rowCount++;		// 열 카운트 증가
-				
+				System.out.println(i+"번째"+colCount+" "+rowCount);
 				// room[N][N]으로 설정하면 index out of bound exception 나서 room[100][100]으로 설정했는데 위의 카운트 조건이 아니면 어떤 게 있을지?
 			}
 		}
 		
 		System.out.println(colCount + " " + rowCount);
+		
 	}
 
 }
