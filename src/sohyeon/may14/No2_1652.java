@@ -66,7 +66,6 @@ public class No2_1652 {
 				// 행과 열이 2칸 이상 .이고 이후 X일 경우 각 카운트 증가
 				if (room[i][j] == '.' && room[i][j+1] == '.' && room[i][j+2] == 'X') colCount++;		// 행 카운트 증가
 				if (room[j][i] == '.' && room[j][i+1] == '.' && room[j][i+2] == 'X') rowCount++;		// 열 카운트 증가
-				System.out.println(i+"번째"+colCount+" "+rowCount);
 				// room[N][N]으로 설정하면 index out of bound exception 나서 room[100][100]으로 설정했는데 위의 카운트 조건이 아니면 어떤 게 있을지?
 			}
 		}
