@@ -46,7 +46,7 @@ public class No2_1652 {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
 		int N = Integer.parseInt(br.readLine());								 // 规 农扁
-		char[][] room = new char[100][100];										 // 规 备炼 历厘
+		char[][] room = new char[N+1][N+1];										 // 规 备炼 历厘
 		int rowCount = 0, colCount = 0;
 		String[] s = new String[N];
 		
