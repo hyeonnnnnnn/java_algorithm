@@ -88,12 +88,16 @@ public class No5_2890 {
 			course[i] = lane.split("");
 		}
 
-		int[] rank = new int[R];													// 팀별 등수
+		int[] rank = new int[R];	
+		for(int i=0;i<rank.length;i++)
+		System.out.println(rank[i]);// 팀별 등수
 		int num = 1;																// 턴을 돌 때마다 등수를 +1씩 해줌(레인 결과)
 		
 		for (int i = C - 2; i > 0; i--) {											// F -> S 방향으로 진행
 			boolean flag = true;
+			
 			for (int j = 0; j < R; j++) {
+				//System.out.println(rank[1]);
 				if (!course[j][i].equals(".") && rank[Integer.parseInt(course[j][i]) - 1] == 0) {	//  .이 없을 시 F에 가장 가까운 것이므로 1등 && 카약인지 체크
 					rank[Integer.parseInt(course[j][i]) - 1] = num;
 					flag = false;
