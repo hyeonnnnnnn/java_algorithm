@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
-
+//https://nahwasa.com/m/entry/%EC%9E%90%EB%B0%94-%EB%B0%B1%EC%A4%80-2936-%EC%B1%84%EC%8B%9D%EC%A3%BC%EC%9D%98%EC%9E%90-boj-java
 public class bj_2936 {
 
 	public static void main(String[] args) throws IOException {
