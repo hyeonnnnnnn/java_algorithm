@@ -58,7 +58,7 @@ public class No2_3226 {
 		int N = sc.nextInt();												// 전화 수
 		sc.nextLine();
 		
-		int result = 0;
+		int result = 0;														// 전화요금
 		
 		for(int i = 0; i < N; i++) {
 			String[] str = sc.nextLine().split(":| ");						// 전화 정보 받아와서 구분자 기준으로 잘라줌
@@ -87,7 +87,7 @@ public class No2_3226 {
 				// 전화시작시간과 전화종료시간이 0시 ~ 6시라면: 분당 5원
 				result += DD * 5;
 				
-			} else if (19 <= HH && HH <= 23 && 19 <= end_hour && end_hour <= 23){
+			}  else if (19 <= HH && HH <= 23 && 19 <= end_hour && end_hour <= 23){
 				// 전화시작시간과 전화종료시간이 19시 ~ 23시라면: 분당 5원
 				result += DD * 5;
 				
@@ -98,11 +98,16 @@ public class No2_3226 {
 			} else if (HH == 6 && end_hour == 7) {
 				// 전화시작시간 6시, 전화종료시간 7시라면: 분당 10분 구간과 분당 5분 구간 계산하여 누적
 				result += 5 * (60 - MM) + 10 * end_minute;
+				
+			} else if (HH == 23 && end_hour == 0){
+				// 전화시작시간과 전화종료시간이 23시 ~ 0(24)시라면: 분당 5원
+				result += DD * 5;
+				
 			}
+		
 		}
 		
 		System.out.println(result);
-		
 		sc.close();
 	}
 
