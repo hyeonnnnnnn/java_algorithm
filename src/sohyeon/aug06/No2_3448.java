@@ -51,23 +51,36 @@ public class No2_3448 {
 		// TODO Auto-generated method stub
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringBuilder sb = new StringBuilder();
+		String tt="";
 		
 		int N = Integer.parseInt(br.readLine());									// 테스트케이스 수
 		int R = 0;																	// 인식한 문자 수
-		int A = 0;																	// 전체 문자 수
+		int A = 0;		// 전체 문자 수
+		String tmp="";
 		double result = 0;
 		
 		for(int i = 0; i < N; i++) {
-			sb.append(br.readLine().replaceAll(System.getProperty("line.separator"), ""));			// 빈줄 없애기 위해 replace
-			A = sb.length();
+		//	sb.append(br.readLine().replaceAll(System.getProperty("line.separator"), ""));			// 빈줄 없애기 위해 replace
+			while(true) { //문자 줄 입력
+				tmp =br.readLine();
+				if(tmp.isEmpty())
+					break;
+				sb.append(tmp);			// 빈줄 없애기 위해 replace
+			}
 			
+			
+			R=0;
+			A = sb.length();
+
 			for(int j = 0; j < sb.length(); j++) {
 				if(sb.charAt(j) == '#') R++;
 			}
 			
 			result = (double)R / A * 100;
-			
+			System.out.println();
+			System.out.println("test "+R+" "+A);
 			System.out.println("Efficiency ratio is " + String.format("%.1f", 100-result) + "%.");
+			sb.delete(0, sb.length());
 			
 		}
 		/*
