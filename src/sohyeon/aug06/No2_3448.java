@@ -5,30 +5,30 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 /*
- * ¹®Á¦
-µ¿ÇõÀÌ´Â »õ·Î¿î ÀÌ¹ÌÁö ¹®ÀÚ ÀÎ½Ä ÇÁ·Î±×·¥À» ¸¸µé¾ú´Ù. ÀÌ ÇÁ·Î±×·¥Àº Á¾ÀÌ¿¡ ¾²¿© ÀÖ´Â ±ÛÀÚ¸¦ ½ºÄµÇÑ µÚ, ÅØ½ºÆ® ÆÄÀÏ·Î ÀúÀåÇÑ´Ù. 
+ * ë¬¸ì œ
+ë™í˜ì´ëŠ” ìƒˆë¡œìš´ ì´ë¯¸ì§€ ë¬¸ìž ì¸ì‹ í”„ë¡œê·¸ëž¨ì„ ë§Œë“¤ì—ˆë‹¤. ì´ í”„ë¡œê·¸ëž¨ì€ ì¢…ì´ì— ì“°ì—¬ ìžˆëŠ” ê¸€ìžë¥¼ ìŠ¤ìº”í•œ ë’¤, í…ìŠ¤íŠ¸ íŒŒì¼ë¡œ ì €ìž¥í•œë‹¤. 
 
-µ¿ÇõÀÌ´Â ¹ãÀ» »õ¸ç ¿­½ÉÈ÷ ÇÁ·Î±×·¥À» ¸¸µé¾úÁö¸¸, ÇÁ·Î±×·¥ÀÇ ½Å·Úµµ´Â 100%°¡ ¾Æ´Ï¸ç, ¾î¶² ±ÛÀÚ´Â ÀÎ½ÄÇÏÁö ¸øÇß´Ù. 
+ë™í˜ì´ëŠ” ë°¤ì„ ìƒˆë©° ì—´ì‹¬ížˆ í”„ë¡œê·¸ëž¨ì„ ë§Œë“¤ì—ˆì§€ë§Œ, í”„ë¡œê·¸ëž¨ì˜ ì‹ ë¢°ë„ëŠ” 100%ê°€ ì•„ë‹ˆë©°, ì–´ë–¤ ê¸€ìžëŠ” ì¸ì‹í•˜ì§€ ëª»í–ˆë‹¤. 
 
-°á±¹ µ¿ÇõÀÌ´Â 100%°¡ ¾Æ´Ï¶ó´Â Á¡¿¡¼­ ½Ç¸ÁÇÏ¿´°í, ´ëÀüÀ¸·Î µµ¸Á°¡°Ô µÇ¾ú´Ù.
+ê²°êµ­ ë™í˜ì´ëŠ” 100%ê°€ ì•„ë‹ˆë¼ëŠ” ì ì—ì„œ ì‹¤ë§í•˜ì˜€ê³ , ëŒ€ì „ìœ¼ë¡œ ë„ë§ê°€ê²Œ ë˜ì—ˆë‹¤.
 
-´ëÀüÀ¸·Î µµ¸Á°¡¹ö¸° µ¿ÇõÀÌ¸¦ ´ë½ÅÇØ¼­, µ¿ÇõÀÌ°¡ ¸¸µç ÀÌ¹ÌÁö ¹®ÀÚ ÀÎ½Ä ÇÁ·Î±×·¥ÀÇ ÀÎ½Ä·üÀ» °è»êÇÏ´Â ÇÁ·Î±×·¥À» ÀÛ¼ºÇÏ½Ã¿À.
+ëŒ€ì „ìœ¼ë¡œ ë„ë§ê°€ë²„ë¦° ë™í˜ì´ë¥¼ ëŒ€ì‹ í•´ì„œ, ë™í˜ì´ê°€ ë§Œë“  ì´ë¯¸ì§€ ë¬¸ìž ì¸ì‹ í”„ë¡œê·¸ëž¨ì˜ ì¸ì‹ë¥ ì„ ê³„ì‚°í•˜ëŠ” í”„ë¡œê·¸ëž¨ì„ ìž‘ì„±í•˜ì‹œì˜¤.
 
-ÀÎ½Ä·üÀº ÀÎ½ÄÇÑ ¹®ÀÚÀÇ ¼ö¸¦ R, ÀüÃ¼ ¹®ÀÚÀÇ ¼ö¸¦ A¶ó°í ÇßÀ» ¶§, R/AÀÌ´Ù. ÁÙ¹Ù²Þ ¹®ÀÚ´Â ¹®ÀÚ·Î ¼¼Áö ¾Ê´Â´Ù.
+ì¸ì‹ë¥ ì€ ì¸ì‹í•œ ë¬¸ìžì˜ ìˆ˜ë¥¼ R, ì „ì²´ ë¬¸ìžì˜ ìˆ˜ë¥¼ Aë¼ê³  í–ˆì„ ë•Œ, R/Aì´ë‹¤. ì¤„ë°”ê¿ˆ ë¬¸ìžëŠ” ë¬¸ìžë¡œ ì„¸ì§€ ì•ŠëŠ”ë‹¤.
 --
-ÀÔ·Â
-ÀÔ·ÂÀº N°³ÀÇ Å×½ºÆ® ÄÉÀÌ½º·Î ±¸¼ºµÇ¾î ÀÖ´Ù. Ã¹Â° ÁÙ¿¡ Å×½ºÆ® ÄÉÀÌ½ºÀÇ °³¼ö NÀÌ ÁÖ¾îÁø´Ù. 
+ìž…ë ¥
+ìž…ë ¥ì€ Nê°œì˜ í…ŒìŠ¤íŠ¸ ì¼€ì´ìŠ¤ë¡œ êµ¬ì„±ë˜ì–´ ìžˆë‹¤. ì²«ì§¸ ì¤„ì— í…ŒìŠ¤íŠ¸ ì¼€ì´ìŠ¤ì˜ ê°œìˆ˜ Nì´ ì£¼ì–´ì§„ë‹¤. 
 
-°¢ Å×½ºÆ® ÄÉÀÌ½º´Â Àû¾îµµ ÇÑ ÁÙÀÌ°í, ÀÎ½ÄÇÏÁö ¸øÇÑ ¹®ÀÚ´Â '#'·Î Ç¥½ÃÇÑ´Ù. 
+ê° í…ŒìŠ¤íŠ¸ ì¼€ì´ìŠ¤ëŠ” ì ì–´ë„ í•œ ì¤„ì´ê³ , ì¸ì‹í•˜ì§€ ëª»í•œ ë¬¸ìžëŠ” '#'ë¡œ í‘œì‹œí•œë‹¤. 
 
-°¢ Å×½ºÆ® ÄÉÀÌ½ºÀÇ ´ÙÀ½¿¡´Â ºó ÁÙÀÌ ÇÑ Ä­¾¿ ÀÖ´Ù. °¢ ÁÙÀº 100±ÛÀÚ¸¦ ³ÑÁö ¾Ê°í, ÁÙÀÇ ¼öµµ 200ÁÙÀ» ³ÑÁö ¾Ê´Â´Ù.
+ê° í…ŒìŠ¤íŠ¸ ì¼€ì´ìŠ¤ì˜ ë‹¤ìŒì—ëŠ” ë¹ˆ ì¤„ì´ í•œ ì¹¸ì”© ìžˆë‹¤. ê° ì¤„ì€ 100ê¸€ìžë¥¼ ë„˜ì§€ ì•Šê³ , ì¤„ì˜ ìˆ˜ë„ 200ì¤„ì„ ë„˜ì§€ ì•ŠëŠ”ë‹¤.
 --
-Ãâ·Â
-°¢ Å×½ºÆ® ÄÉÀÌ½º¿¡ ´ëÇØ¼­ ÀÎ½Ä·üÀ» °è»êÇÑ µÚ ´ÙÀ½°ú °°ÀÌ Ãâ·ÂÇÑ´Ù. °¢ ÁÙÀº "Efficiency ratio is X%."¿Í °°Àº ÇüÅÂ·Î Ãâ·ÂÇØ¾ß ÇÑ´Ù. 
+ì¶œë ¥
+ê° í…ŒìŠ¤íŠ¸ ì¼€ì´ìŠ¤ì— ëŒ€í•´ì„œ ì¸ì‹ë¥ ì„ ê³„ì‚°í•œ ë’¤ ë‹¤ìŒê³¼ ê°™ì´ ì¶œë ¥í•œë‹¤. ê° ì¤„ì€ "Efficiency ratio is X%."ì™€ ê°™ì€ í˜•íƒœë¡œ ì¶œë ¥í•´ì•¼ í•œë‹¤. 
 
-X´Â ÀÎ½Ä·üÀ» ÆÛ¼¾Æ®·Î Ç¥½ÃÇÑ °ÍÀÌ°í, ¼Ò¼öÁ¡ µÎÀÚ¸® ÀÌ»óÀÎ °æ¿ì¿¡´Â µÑÂ° ÀÚ¸®¿¡¼­ ¹Ý¿Ã¸²ÇØ¼­ Ãâ·ÂÇÑ´Ù. ´Ü, ¹Ý¿Ã¸² °á°ú°¡ Á¤¼öÀÌ¸é Á¤¼ö ºÎºÐ¸¸ Ãâ·ÂÇÑ´Ù.
+XëŠ” ì¸ì‹ë¥ ì„ í¼ì„¼íŠ¸ë¡œ í‘œì‹œí•œ ê²ƒì´ê³ , ì†Œìˆ˜ì  ë‘ìžë¦¬ ì´ìƒì¸ ê²½ìš°ì—ëŠ” ë‘˜ì§¸ ìžë¦¬ì—ì„œ ë°˜ì˜¬ë¦¼í•´ì„œ ì¶œë ¥í•œë‹¤. ë‹¨, ë°˜ì˜¬ë¦¼ ê²°ê³¼ê°€ ì •ìˆ˜ì´ë©´ ì •ìˆ˜ ë¶€ë¶„ë§Œ ì¶œë ¥í•œë‹¤.
 --
-¿¹Á¦ ÀÔ·Â 1 
+ì˜ˆì œ ìž…ë ¥ 1 
 3
 Pr#nt ex##tly one##ine for#eac# te#t c#se.
 
@@ -40,7 +40,7 @@ of th#m (N) is given on
 the first #ine
 of the#input#file.
 
-¿¹Á¦ Ãâ·Â 1 
+ì˜ˆì œ ì¶œë ¥ 1 
 Efficiency ratio is 78.6%.
 Efficiency ratio is 100%.
 Efficiency ratio is 94%.
@@ -51,21 +51,20 @@ public class No2_3448 {
 		// TODO Auto-generated method stub
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringBuilder sb = new StringBuilder();
-		String tt="";
 		
-		int N = Integer.parseInt(br.readLine());									// Å×½ºÆ®ÄÉÀÌ½º ¼ö
-		int R = 0;																	// ÀÎ½ÄÇÑ ¹®ÀÚ ¼ö
-		int A = 0;		// ÀüÃ¼ ¹®ÀÚ ¼ö
+		int N = Integer.parseInt(br.readLine());									// í…ŒìŠ¤íŠ¸ì¼€ì´ìŠ¤ ìˆ˜
+		int R = 0;																	// ì¸ì‹í•œ ë¬¸ìž ìˆ˜
+		int A = 0;		// ì „ì²´ ë¬¸ìž ìˆ˜
 		String tmp="";
 		double result = 0;
 		
 		for(int i = 0; i < N; i++) {
-		//	sb.append(br.readLine().replaceAll(System.getProperty("line.separator"), ""));			// ºóÁÙ ¾ø¾Ö±â À§ÇØ replace
-			while(true) { //¹®ÀÚ ÁÙ ÀÔ·Â
+		//	sb.append(br.readLine().replaceAll(System.getProperty("line.separator"), ""));			// ë¹ˆì¤„ ì—†ì• ê¸° ìœ„í•´ replace
+			while(true) { //ë¬¸ìž ì¤„ ìž…ë ¥
 				tmp =br.readLine();
 				if(tmp.isEmpty())
 					break;
-				sb.append(tmp);			// ºóÁÙ ¾ø¾Ö±â À§ÇØ replace
+				sb.append(tmp);			// ë¹ˆì¤„ ì—†ì• ê¸° ìœ„í•´ replace
 			}
 			
 			
