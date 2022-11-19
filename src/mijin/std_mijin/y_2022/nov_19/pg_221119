@@ -1,0 +1,29 @@
+조건별로 분류하여 주문상태 출력하기
+
+SELECT ORDER_ID, 
+       PRODUCT_ID, 
+       TO_CHAR(OUT_DATE,'YYYY-MM-DD') AS OUT_DATE, --시간 없애고 포맷  
+       IF(OUT_DATE <= '2022-05-01','출고완료',
+          IF(OUT_DATE > '2022-05-01','출고대기','출고미정')) AS 출고여부
+FROM FOOD_ORDER
+ORDER BY ORDER_ID
+
+
+헤비 유저가 소유한 장소
+-- 코드를 입력하세요
+SELECT ID, NAME,HOST_ID
+FROM PLACES
+GROUP BY HOST_ID ,ID, NAME
+HAVING COUNT(*) >=2
+
+
+오랜 기간 보호한 동물(1)
+-- 코드를 입력하세요
+SELECT NAME, DATETIME 
+FROM ( 
+    SELECT NAME, DATETIME
+    FROM ANIMAL_INS AI
+    WHERE  NOT EXISTS ( SELECT ANIMAL_ID FROM ANIMAL_OUTS WHERE ANIMAL_ID =AI.ANIMAL_ID)
+    ORDER BY DATETIME 
+    )
+WHERE ROWNUM <4
